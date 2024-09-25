@@ -2,7 +2,7 @@
 export default {
   providers: [
     {
-      domain: process.env.CLERK_ISSUER_URL,
+      domain: "https://first-frog-74.clerk.accounts.dev",
       applicationID: 'convex',
     },
   ],

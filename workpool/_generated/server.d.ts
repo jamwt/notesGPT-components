@@ -148,24 +148,11 @@ export type DatabaseReader = GenericDatabaseReader<DataModel>;
  */
 export type DatabaseWriter = GenericDatabaseWriter<DataModel>;
 
-export declare const app: {
-  workpool: {
-    counter: {
-      get: FunctionReference<"query", "internal", { key: string }, any>;
-      mod: FunctionReference<
-        "mutation",
-        "internal",
-        { amt: number; key: string },
-        any
-      >;
-    };
-    sched: {
-      runNew: FunctionReference<
-        "mutation",
-        "internal",
-        { args: string; ref: string },
-        any
-      >;
-    };
-  };
+export declare const component: {};
+type ComponentArgs = {
+  maxConcurrency: number;
 };
+export declare const componentArg: <Name extends keyof ComponentArgs>(
+  ctx: GenericCtx,
+  name: Name,
+) => ComponentArgs[Name];
